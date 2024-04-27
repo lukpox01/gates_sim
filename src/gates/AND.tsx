@@ -1,13 +1,12 @@
 import {Group, Line, Rect, Text} from "react-konva";
 import {Props} from "../utils.ts";
 
-function ANDgate({x, y, height, width}: Props) {
+function ANDgate({x, y, height=80, width=80}: Props) {
 
 
     return (
         <Group draggable>
             <Rect
-                className='and-gate'
                 x={x}
                 y={y}
                 width={width}
@@ -19,7 +18,7 @@ function ANDgate({x, y, height, width}: Props) {
             <Text
                 x={x}
                 y={y}
-                text='OR'
+                text='AND'
                 fontSize={height/100*40}
                 fontFamily='Calibri'
                 fill='black'

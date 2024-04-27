@@ -1,16 +1,19 @@
-
+import './menu.css'
 function Gate({name}: {name: string}) {
 
     return (
-        <div>
-            <p>{name}</p>
-        </div>
+        <p>{name}</p>
     )
 }
-function GateMenu() {
+function GateMenu({add_gate}: {add_gate: (gate: string, x: number, y: number) => void}) {
     return (
-        <div>
-            <Gate name="OR"/>
+        <div className={'gate-list-container'}>
+            <ul className={'gate-list'}>
+               <li
+                   onClick={() => add_gate("AND", 10, 10)}>
+                   <Gate name="AND"/>
+               </li>
+            </ul>
         </div>
     )
 }
