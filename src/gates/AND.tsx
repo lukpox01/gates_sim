@@ -1,11 +1,18 @@
 import {Group, Line, Rect, Text} from "react-konva";
 import {Props} from "../utils.ts";
 
-function ANDgate({x, y, height=80, width=80}: Props) {
+function ANDgate({id ,x, y,onDrag, height=80, width=80}: Props) {
 
 
     return (
-        <Group draggable>
+        <Group
+            draggable
+            onDragEnd={(evt) => {
+                console.log(evt.target.x(), evt.target.y())
+                onDrag(id, evt.target.x(), evt.target.y())
+
+            }}
+        >
             <Rect
                 x={x}
                 y={y}

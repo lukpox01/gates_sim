@@ -19,3 +19,4 @@ function GateMenu({add_gate}: {add_gate: (gate: string, x: number, y: number) =>
 }
 
 export default GateMenu
+
